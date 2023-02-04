@@ -2,10 +2,15 @@ import React from 'react';
 import './css/fir.css';
 import './css/policerob.css';
 import PoliceProfile from './PoliceProfile'
-
+import { useNavigate } from 'react-router';
 const PoliceRob = () => {
-    const draggables = document.querySelectorAll('.draggable')
-    const containers = document.querySelectorAll('.container')
+    var navigate = useNavigate()
+    var viewDetail = () => {
+        navigate('/police/cases/rob/detail')
+    }
+
+    var draggables = document.querySelectorAll('.draggable')
+    var containers = document.querySelectorAll('.container')
 
     draggables.forEach(draggable => {
         draggable.addEventListener('dragstart', () => {
@@ -43,6 +48,8 @@ const PoliceRob = () => {
             }
         }, { offset: Number.NEGATIVE_INFINITY }).element
     }
+
+    
     return (
         <>
             <div className="home-container">
@@ -52,51 +59,49 @@ const PoliceRob = () => {
                     <div className="big-container">
                         <div className="container robpending">
                             <h1 className='rob-pending'>Pending</h1>
-                            <p className="draggable" draggable="true">
+                            <div className="draggable" draggable="true">
                                 <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button className='myfir-btn'><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-
-                            </p>
-                            <p className="draggable" draggable="true">
+                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                            </div>
+                            <div className="draggable" draggable="true">
                                 <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button className='myfir-btn'><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </p>
+                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                            </div>
                         </div>
                         <div className="container robonging">
                         <h1 className='rob-ongoing'>Ongoing</h1>
-                            <p className="draggable" draggable="true">
+                            <div className="draggable" draggable="true">
                             <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button className='myfir-btn'><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </p>
-                            <p className="draggable" draggable="true">
+                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                            </div>
+                            <div className="draggable" draggable="true">
                             <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button className='myfir-btn'><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </p>
+                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                            </div>
                         </div>
                         <div className="container robdone">
                         <h1 className='rob-completed'>Completed</h1>
-                            <p className="draggable" draggable="true">
+                            <div className="draggable" draggable="true">
+                                <h1 className='rob-name'>Nilay Pophalkar</h1>
+                                <h1 className='rob-police-loc'>Thane</h1>
+                                <h1 className='rob-fir-date'>04-02-2023</h1>
+                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                            </div>
+                            <div className="draggable" draggable="true">
                             <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button className='myfir-btn'><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </p>
-                            <p className="draggable" draggable="true">
-                            <h1 className='rob-name'>Nilay Pophalkar</h1>
-                                <h1 className='rob-police-loc'>Thane</h1>
-                                <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button className='myfir-btn'><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </p>
+                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                            </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>

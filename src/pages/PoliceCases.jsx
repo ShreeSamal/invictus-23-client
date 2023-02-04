@@ -12,11 +12,11 @@ const PoliceCases = () => {
                 <div className='home-stats'>
                     <p className='fir-title'>Cases/FIRs</p>
                     <div className="case-cards-wrap">
-                        <Link className="cases-card" to='/police/cases/rob' style={{ textDecoration: 'none' }}>
+                        <Link className="cases-card" to='#' style={{ textDecoration: 'none' }}>
                             <img className='cases-card-img' src="/images/missing-person.jpeg" alt="" />
                             <p className='cases-title'>Missing</p>
                         </Link>
-                        <Link className="cases-card" to='#' style={{ textDecoration: 'none' }}>
+                        <Link className="cases-card" to='/police/cases/rob' style={{ textDecoration: 'none' }}>
                             <img className='cases-card-img' src="/images/robbery.PNG" alt="" />
                             <p className='cases-title'>Robbery</p>
                         </Link>
