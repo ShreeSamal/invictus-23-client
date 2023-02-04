@@ -9,7 +9,7 @@ const Fir = () => {
                 <Profile />
                 <div className='home-stats'>
                     <div className="fir-wrap">
-                        <p className='fir-title'>File FIR.</p>
+                        <p className='fir-title'>File FIR</p>
                         <div className="fir-body">
                             <table>
                                 <tr>
@@ -24,19 +24,31 @@ const Fir = () => {
                                     <td><input type="mail" /></td>
                                 </tr>
                                 <tr>
-                                    <td><label className='fir-topic'>Police Station:<span>*</span></label></td>
-                                    <td><input type='text' /></td>
-                                    <td><label className='fir-topic'>Date:<span>*</span></label></td>
+                                    <td><label className='fir-topic'>Type of FIR:<span>*</span></label></td>
+                                    <td id='fir-type'><select name="type" className="fir-type-dropdown">
+                                        <option value="type">Select Type</option>
+                                        <option value="missing">Missing Person</option>
+                                        <option value="rob">Robbery</option>
+                                        <option value="unidentified">Unidentified Object</option>
+                                        <option value="accident">Traffic Accident</option>
+                                        <option value="murder">Murder</option>
+                                        <option value="drugs">Drugs</option>
+                                        <option value="others">Others</option>
+                                    </select></td>
+                                    <td><label className='fir-topic'>Incident Date:<span>*</span></label></td>
                                     <td><input type="date" /></td>
                                 </tr>
                                 <tr>
                                     <td><label className='fir-topic'>Address:<span>*</span></label></td>
                                     <td colSpan={3}><textarea name="" id="" rows="4" className='textarea'></textarea></td>
                                 </tr>
-                                <tr><td><label className='fir-topic'>Complaint:<span>*</span></label></td>
+                                <tr>
+                                    <td><label className='fir-topic'>Complaint:<span>*</span></label></td>
                                     <td colSpan={3}><textarea name="" id="" rows="4" className='textarea'></textarea></td>
                                 </tr>
                                 <tr>
+                                    <td><label className='fir-topic'>Police Station:<span>*</span></label></td>
+                                    <td><input type='text' /></td>
                                     <td> <label className='fir-topic'>Upload Signature:<span>*</span></label></td>
                                     <td>
                                         <input type="file" />
