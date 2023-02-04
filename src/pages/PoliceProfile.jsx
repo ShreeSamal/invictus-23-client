@@ -10,7 +10,7 @@ const PoliceProfile = () => {
     <div className='title'>Live Duty Department</div>
     <div className="content-list">
       <ul className="aside-list">
-      <li className="asideItem"><Link to='/police/home' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%', padding: "10px" }}><i className="bi bi-house icon"></i>Home</Link></li>
+      <li className="asideItem"><Link to='/policeHome' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%', padding: "10px" }}><i className="bi bi-house icon"></i>Home</Link></li>
       <li className="asideItem"><Link to='/police/cases' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%', padding: "10px" }}><i className="bi bi-journal icon"></i>Cases</Link></li>
       <li className="asideItem"><Link to='/police/anonymous/information' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%', padding: "10px" }}><i className="bi bi-exclamation-circle icon"></i>Anonymous Information</Link></li>
       <li className="asideItem"><Link to='/police/feedback' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%', padding: "10px" }}><i className="bi bi-card-text icon"></i>Feedback</Link></li>

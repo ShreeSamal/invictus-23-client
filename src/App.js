@@ -7,6 +7,7 @@ import Feedback from "./pages/Feedback";
 import PoliceHome from "./pages/PoliceHome";
 import PoliceCases from "./pages/PoliceCases";
 import PoliceRob from "./pages/PoliceRob";
+import PoliceRobDetails from "./pages/PoliceRobDetails";
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/policeHome" element={<PoliceHome/>}/>
         <Route exact path="/police/cases" element={<PoliceCases />} />
         <Route exact path="/police/cases/rob" element={<PoliceRob />} />
+        <Route exact path="/police/cases/rob/detail" element={<PoliceRobDetails />}/>
       </Routes>
     </BrowserRouter>
   );
