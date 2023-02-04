@@ -1,8 +1,78 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Profile from './Profile';
 import './css/home.css';
 import './css/fir.css';
+import { storage } from '../firebase';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+
 const Fir = () => {
+    const [lname, setLname] = useState(null);
+    const [fname, setFname] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [contact, setContact] = useState(null);
+    const [address, setAddress] = useState(null);
+    const [police_station, setPoliceStation] = useState(null);
+    const [date, setDate] = useState(null);
+    const [complaint, setComplaint] = useState(null);
+    const [complaint_type, setComplaintType] = useState(null);
+    var image
+  const [imagefire, setImagefire] = useState(null);
+  async function uploadImage(id) {
+    if (imagefire == null) return;
+    const imgref = ref(storage, `images/${id}`);
+    uploadBytes(imgref, imagefire).then(() => {
+      getDownloadURL(imgref).then((url) => {
+        image = url;
+        updateImg(id);
+      })
+    })
+  }
+  async function updateImg(id) {
+    const res = await fetch('http://localhost:5000/fir/update', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        id,
+        image
+      })
+    })
+    const data = await res.json();
+    console.log(data);
+    if (data.status === "ok") {
+      console.log('created')
+      alert('Fir Registered Successfully')
+      window.location.reload();
+    }
+  }
+
+  async function submitData() {
+    console.log('submit')
+    const res = await fetch('http://localhost:5000/fir/save', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fname,
+        lname,
+        email,
+        contact,
+        address,
+        police_station,
+        date,
+        complaint,
+        complaint_type
+      })
+    })
+
+    const data = await res.json();
+    if (data.message === 'Fir Registered Successfully') {
+      uploadImage(data.fir._id)
+    }
+  }
+
     return (
         <>
             <div className="home-container">
@@ -14,18 +84,18 @@ const Fir = () => {
                             <table>
                                 <tr>
                                     <td><label className='fir-topic'>First Name:<span>*</span> </label></td>
-                                    <td ><input type="text" /></td>
+                                    <td ><input type="text" onChange={(e) => { setFname(e.target.value) }}/></td>
                                     <td><label className='fir-topic'>Last Name:<span>*</span></label></td>
-                                    <td><input type="text" /></td>
+                                    <td><input type="text" onChange={(e) => {setLname( e.target.value )}}/></td>
                                 </tr>
                                 <tr><td><label className='fir-topic'>Contact:<span>*</span></label></td>
-                                    <td><input type="number" /></td>
+                                    <td><input type="number" onChange={(e) => setContact(e.target.value) }/></td>
                                     <td><label className='fir-topic'>Email ID:<span>*</span></label></td>
-                                    <td><input type="mail" /></td>
+                                    <td><input type="mail" onChange={(e) => {setEmail( e.target.value) }}/></td>
                                 </tr>
                                 <tr>
                                     <td><label className='fir-topic'>Type of FIR:<span>*</span></label></td>
-                                    <td id='fir-type'><select name="type" className="fir-type-dropdown">
+                                    <td id='fir-type'><select name="type" className="fir-type-dropdown" onChange={(e) => { setComplaintType( e.target.value) }}>
                                         <option value="type">Select Type</option>
                                         <option value="missing">Missing Person</option>
                                         <option value="rob">Robbery</option>
@@ -36,22 +106,22 @@ const Fir = () => {
                                         <option value="others">Others</option>
                                     </select></td>
                                     <td><label className='fir-topic'>Incident Date:<span>*</span></label></td>
-                                    <td><input type="date" /></td>
+                                    <td><input type="date" onChange={(e) => {setDate( e.target.value )}}/></td>
                                 </tr>
                                 <tr>
                                     <td><label className='fir-topic'>Address:<span>*</span></label></td>
-                                    <td colSpan={3}><textarea name="" id="" rows="4" className='textarea'></textarea></td>
+                                    <td colSpan={3}><textarea onChange={(e) => {setAddress( e.target.value )}} name="" id="" rows="4" className='textarea'></textarea></td>
                                 </tr>
                                 <tr>
                                     <td><label className='fir-topic'>Complaint:<span>*</span></label></td>
-                                    <td colSpan={3}><textarea name="" id="" rows="4" className='textarea'></textarea></td>
+                                    <td colSpan={3}><textarea onChange={(e) => {setComplaint( e.target.value) }} name="" id="" rows="4" className='textarea'></textarea></td>
                                 </tr>
                                 <tr>
                                     <td><label className='fir-topic'>Police Station:<span>*</span></label></td>
-                                    <td><input type='text' /></td>
+                                    <td><input type='text' onChange={(e) => {setPoliceStation( e.target.value )}}/></td>
                                     <td> <label className='fir-topic'>Upload Signature:<span>*</span></label></td>
                                     <td>
-                                        <input type="file" />
+                                        <input type="file" onChange={(e) => { setImagefire(e.target.files[0]) }}/>
                                     </td>
                                 </tr>
                             </table>
@@ -62,7 +132,7 @@ const Fir = () => {
                             </div>
                             <div className="fir-btnGroup">
                                 <button>Reset</button>
-                                <button>Submit</button>
+                                <button onClick={submitData}>Submit</button>
                             </div>
                         </div>
                     </div>
