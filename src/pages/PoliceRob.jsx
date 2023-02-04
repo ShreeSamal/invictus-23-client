@@ -59,13 +59,13 @@ const PoliceRob = () => {
                     <div className="big-container">
                         <div className="container robpending">
                             <h1 className='rob-pending'>Pending</h1>
-                            <div className="draggable" draggable="true">
+                            <div className="draggable" >
                                 <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
                                 <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
                             </div>
-                            <div className="draggable" draggable="true">
+                            <div className="draggable" >
                                 <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
@@ -74,13 +74,13 @@ const PoliceRob = () => {
                         </div>
                         <div className="container robonging">
                         <h1 className='rob-ongoing'>Ongoing</h1>
-                            <div className="draggable" draggable="true">
+                            <div className="draggable" >
                             <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
                                 <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
                             </div>
-                            <div className="draggable" draggable="true">
+                            <div className="draggable" >
                             <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
@@ -89,13 +89,13 @@ const PoliceRob = () => {
                         </div>
                         <div className="container robdone">
                         <h1 className='rob-completed'>Completed</h1>
-                            <div className="draggable" draggable="true">
+                            <div className="draggable" >
                                 <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>
                                 <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
                             </div>
-                            <div className="draggable" draggable="true">
+                            <div className="draggable" >
                             <h1 className='rob-name'>Nilay Pophalkar</h1>
                                 <h1 className='rob-police-loc'>Thane</h1>
                                 <h1 className='rob-fir-date'>04-02-2023</h1>

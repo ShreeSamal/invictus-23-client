@@ -11,6 +11,7 @@ import PoliceRob from "./pages/PoliceRob";
 import PoliceRobDetails from "./pages/PoliceRobDetails";
 import MyFir from "./pages/MyFir";
 import MyFirDetails from "./pages/MyFirDetails";
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,9 +25,11 @@ function App() {
         <Route exact path="/policeHome" element={<PoliceHome/>}/>
         <Route exact path="/police/cases" element={<PoliceCases />} />
         <Route exact path="/police/cases/rob" element={<PoliceRob />} />
+
         <Route exact path="/police/cases/rob/detail" element={<PoliceRobDetails />}/>
         <Route exact path="/myFir" element={<MyFir />}/>
         <Route exact path="/myFirDetails/:id" element={<MyFirDetails />}/>
+        
       </Routes>
     </BrowserRouter>
   );
