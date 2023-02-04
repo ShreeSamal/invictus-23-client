@@ -38,7 +38,6 @@ export default function Login_Signup() {
     const data = await res.json();
     console.log(data);
     alert(data.message);
-    window.location.href = '/'
   }
 
     async function login(e) {
@@ -59,6 +58,7 @@ export default function Login_Signup() {
             handle();
         }
         alert(data.message);
+        window.location.href = "/";
     }
 
   return (
