@@ -26,8 +26,9 @@
 .home-logo {
   background-color: #f3f3f3;
   border-radius: 50%;
-  height: 4em;
-  width: 4em;
+  height: 10em;
+  width: 10em;
+  border: 2px solid black;
 }
 
 .content-list{
@@ -97,7 +98,7 @@
   width: 100%;
 }
 .home-title{
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 900;
   color: var(--primary);
   margin: 0;
@@ -130,7 +131,7 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .home-police-number-title{
   font-size: 1.4em;

@@ -1,28 +1,16 @@
 import React from "react";
 import "./css/home.css";
 import { Link } from "react-router-dom";
+import Profile from "./Profile";
 const Home = () => {
   return (
-    // home
-    // file fir
-    // feedback
     <div className="home-container">
-      <aside className="home-profile">
-        <div className="home-logo"></div>
-        <div className="content-list">
-          <ul className="aside-list">
-            <li className="asideItem"><Link to='/login' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-box-arrow-in-right icon"></i>Login</Link></li>
-            <li className="asideItem"><Link to='#' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-house icon"></i>Home</Link></li>
-            <li className="asideItem"><Link to='#' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-journal icon"></i>File FIR</Link></li>
-            <li className="asideItem"><Link to='#' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-card-text icon"></i>Feedback</Link></li>
-          </ul>
-        </div>
-      </aside>
+      <Profile />
 
 
       <div className="home-stats">
         <div className="home-stats-wrap">
-          <p className="home-title">Welcome to Live Duty!!!</p>
+          <p className="home-title">Welcome to Live Duty Department!!!</p>
 
           <div className="home-location">
             <label className="home-select-location">Select a Location:</label>
