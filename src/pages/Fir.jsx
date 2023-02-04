@@ -23,8 +23,6 @@ const Fir = () => {
     uploadBytes(imgref, imagefire).then(() => {
       getDownloadURL(imgref).then((url) => {
         image = url;
-        console.log(image);
-        console.log('image uploaded');
         updateImg(id);
       })
     })
@@ -44,8 +42,8 @@ const Fir = () => {
     console.log(data);
     if (data.status === "ok") {
       console.log('created')
-      alert('Product Created')
-      window.location.href = '/productform';
+      alert('Fir Registered Successfully')
+      window.location.reload();
     }
   }
 
@@ -70,11 +68,8 @@ const Fir = () => {
     })
 
     const data = await res.json();
-    console.log(data.message)
     if (data.message === 'Fir Registered Successfully') {
-        alert(data.message)
-      console.log('dummy');
-      uploadImage(data.id)
+      uploadImage(data.fir._id)
     }
   }
 
