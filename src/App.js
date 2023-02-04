@@ -15,6 +15,7 @@ import PoliceRobDetails from "./pages/PoliceRobDetails";
 import MyFir from "./pages/MyFir";
 import MyFirDetails from "./pages/MyFirDetails";
 import PoliceAnonymous from "./pages/PoliceAnonymous";
+import PoliceFeedback from "./pages/PoliceFeedback";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route exact path="/myFir" element={<MyFir />}/>
         <Route exact path="/myFirDetails/:id" element={<MyFirDetails />}/>
         <Route exact path="/police/anonymous/information" element={<PoliceAnonymous />}/>
+        <Route exact path="/police/feedback" element={<PoliceFeedback />}/>
 
 
 
