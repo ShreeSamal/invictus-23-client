@@ -9,6 +9,7 @@ import PoliceHome from "./pages/PoliceHome";
 import PoliceCases from "./pages/PoliceCases";
 import PoliceRob from "./pages/PoliceRob";
 
+
 import PoliceRobDetails from "./pages/PoliceRobDetails";
 
 import MyFir from "./pages/MyFir";
@@ -31,9 +32,11 @@ function App() {
 
         <Route exact path="/police/cases/rob/detail" element={<PoliceRobDetails />}/>
 
+
         <Route exact path="/myFir" element={<MyFir />}/>
         <Route exact path="/myFirDetails/:id" element={<MyFirDetails />}/>
         <Route exact path="/police/anonymous/information" element={<PoliceAnonymous />}/>
+
 
 
       </Routes>

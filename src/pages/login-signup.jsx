@@ -58,6 +58,9 @@ export default function Login_Signup() {
             handle();
         }
         alert(data.message);
+        if(data.user.isPolice === true){
+            window.location.href = "/policeHome";
+        }
         window.location.href = "/";
     }
 
