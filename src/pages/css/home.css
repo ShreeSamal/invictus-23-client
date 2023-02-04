@@ -4,6 +4,7 @@
   --primary: #3880ff;
   --primary2: #3848fa;
   --highlight: #4555ff;
+  --red: red;
 }
 
 .home-profile {
@@ -26,9 +27,10 @@
 .home-logo {
   background-color: #f3f3f3;
   border-radius: 50%;
-  height: 10em;
-  width: 10em;
+  height: 12em;
+  width: 12em;
   border: 2px solid black;
+  margin-top: 40px;
 }
 
 .content-list{
@@ -45,7 +47,7 @@
 }
 
 .asideItem{
-  padding: 10px;
+  
   margin-bottom: 10px;
   border-radius: 3px;
 }
@@ -62,7 +64,12 @@
   margin-right: 10px;
 }
 
-
+.title{
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 20px 0px;
+}
 
 
 

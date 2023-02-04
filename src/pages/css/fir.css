@@ -1,0 +1,97 @@
+.fir-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.fir-title{
+    font-size: 4em;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 0;
+}
+
+.fir-body{
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fir-body table tr td{
+    padding: 0;
+}
+
+.fir-body table tr td:nth-of-type(odd){
+    width: 14%;
+}
+.fir-body table tr td:nth-of-type(even){
+    width: 36%;
+}
+
+.fir-topic{
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--black);
+    margin: 0;
+}
+
+.fir-topic span{
+    color: var(--red);
+}
+
+.fir-body input{
+    font-size: 1.2em;
+    color: var(--black);
+}
+
+.fir-body .textarea{
+    font-size: 1.5em;
+    width: 84.45%;
+    padding: 4px;
+    margin-left: 79px;
+    background-color: #e0dede;
+    border-radius: 5px;
+    border: none;
+    color: var(--black);
+}
+
+
+.fir-body input::-webkit-outer-spin-button,
+.fir-body input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.fir-body input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.fir-confirmation{
+    display: flex;
+    align-items: center;
+    padding-right: 70px;
+    margin-top: 10px;
+}
+
+
+.fir-confirmation input{
+    width: 7%;
+}
+.fir-confirm-text{
+    font-size: 1em;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.fir-btnGroup{
+    width: 50%;
+    display: flex;   
+    margin: auto;
+}
+
+.fir-btnGroup button{
+    width: 30%;
+    font-size: 1.2em;
+}

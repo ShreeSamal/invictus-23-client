@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./css/home.css";
 import { Link } from "react-router-dom";
 import Profile from "./Profile";
+import { Line } from "react-chartjs-2";
 const Home = () => {
+  const [stats, setStats] = useState("");
+  const [data, setData] = useState("");
+  useEffect(() => {
+    getStats();
+  }, []);
+  async function getStats() {
+  const res = await fetch("http://localhost:5000/stats");
+  const data = await res.json();
+  setStats(data[0]);
+  }
+  if(stats){
   return (
     <div className="home-container">
       <Profile />
@@ -25,30 +37,40 @@ const Home = () => {
 
           <div className="home-police-number">
             <p className="home-police-number-title">Number of Police In the Region:</p>
-            <p className="home-police-number-value">5000+</p>
+            <p className="home-police-number-value">{stats.police_count}</p>
+          </div>
+
+          <div className="home-police-number">
+            <p className="home-police-number-title">Number of Police Branches:</p>
+            <p className="home-police-number-value">{stats.branches_count}</p>
           </div>
 
           <div className="home-graph">
             <p className="home-graph-title">Stats of Cases:</p>
             <div className="home-graph-display">
-              
             </div>
           </div>
 
           <div className="home-branch">
             <p className="home-branch-title">List of Branches:</p>
             <div className="home-branch-lst">
-              <p className="home-branch-name">Thane</p>
-              <p className="home-branch-name">Mulund</p>
-              <p className="home-branch-name">Kurla</p>
-              <p className="home-branch-name">Lalbaugh</p>
+              {stats!=="" &&  stats.branches.map((branch) => (
+              <p className="home-branch-name">{branch}</p>
+              ))
+              }
             </div> 
           </div>
 
         </div>
       </div>
     </div>
-  );
+  )}
+  else{
+    return(
+    <div>
+      Loading
+    </div>)
+  }
 };
 
 export default Home;
