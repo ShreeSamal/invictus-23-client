@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/fir.css';
 import './css/policerob.css';
 import PoliceProfile from './PoliceProfile'
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 const PoliceRob = () => {
+    let {category} = useParams();
+    const [fir,setFir] = useState([]);
     var navigate = useNavigate()
-    var viewDetail = () => {
-        navigate('/police/cases/rob/detail')
+    var viewDetail = (id) => {
+        navigate(`/police/cases/rob/detail/${id}`)
     }
-
+    async function getCrimes(){
+        const res = await fetch(`http://localhost:5000/fir/get/${category}`);
+        const data = await res.json();
+        setFir(data);
+    }
+    useEffect(() => {
+        getCrimes();
+    },[])
     var draggables = document.querySelectorAll('.draggable')
     var containers = document.querySelectorAll('.container')
 
@@ -48,8 +57,6 @@ const PoliceRob = () => {
             }
         }, { offset: Number.NEGATIVE_INFINITY }).element
     }
-
-    
     return (
         <>
             <div className="home-container">
@@ -59,48 +66,47 @@ const PoliceRob = () => {
                     <div className="big-container">
                         <div className="container robpending">
                             <h1 className='rob-pending'>Pending</h1>
-                            <div className="draggable" draggable="true">
-                                <h1 className='rob-name'>Nilay Pophalkar</h1>
-                                <h1 className='rob-police-loc'>Thane</h1>
-                                <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </div>
-                            <div className="draggable" draggable="true">
-                                <h1 className='rob-name'>Nilay Pophalkar</h1>
-                                <h1 className='rob-police-loc'>Thane</h1>
-                                <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </div>
+                            {fir.length > 0 && fir.map((f) => {
+                            if(f.status === 'Pending'){
+                                return(
+                            <div className="draggable">
+                                <h1 className='rob-name'>{f.fname} {f.lname}</h1>
+                                <h1 className='rob-police-loc'>{f.address}</h1>
+                                <h1 className='rob-fir-date'>{f.date.slice(0,10)}</h1>
+                                <button onClick={()=>viewDetail(f._id)} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                            </div>)
+                            }
+    })}
                         </div>
                         <div className="container robonging">
                         <h1 className='rob-ongoing'>Ongoing</h1>
-                            <div className="draggable" draggable="true">
-                            <h1 className='rob-name'>Nilay Pophalkar</h1>
-                                <h1 className='rob-police-loc'>Thane</h1>
-                                <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                        {fir.length > 0 && fir.map((f) => {
+                            if(f.status === 'Ongoing'){
+                                return(
+                            <div className="draggable">
+                                <h1 className='rob-name'>{f.fname} {f.lname}</h1>
+                                <h1 className='rob-police-loc'>{f.address}</h1>
+                                <h1 className='rob-fir-date'>{f.date.slice(0,10)}</h1>
+                                <button onClick={()=>viewDetail(f._id)} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
                             </div>
-                            <div className="draggable" draggable="true">
-                            <h1 className='rob-name'>Nilay Pophalkar</h1>
-                                <h1 className='rob-police-loc'>Thane</h1>
-                                <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </div>
+                                )
+                            }
+    })}
                         </div>
                         <div className="container robdone">
                         <h1 className='rob-completed'>Completed</h1>
-                            <div className="draggable" draggable="true">
-                                <h1 className='rob-name'>Nilay Pophalkar</h1>
-                                <h1 className='rob-police-loc'>Thane</h1>
-                                <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                        {fir.length > 0 && fir.map((f) => {
+                            if(f.status === 'Resolved'){
+                                return(
+                            <div className="draggable">
+                                <h1 className='rob-name'>{f.fname} {f.lname}</h1>
+                                <h1 className='rob-police-loc'>{f.address}</h1>
+                                <h1 className='rob-fir-date'>{f.date.slice(0,10)}</h1>
+                                <button onClick={()=>viewDetail(f._id)} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
                             </div>
-                            <div className="draggable" draggable="true">
-                            <h1 className='rob-name'>Nilay Pophalkar</h1>
-                                <h1 className='rob-police-loc'>Thane</h1>
-                                <h1 className='rob-fir-date'>04-02-2023</h1>
-                                <button onClick={viewDetail} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                            </div>
+                                )
+                            }
+    })}
                         </div>
                     </div>
                 </div>
