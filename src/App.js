@@ -8,9 +8,7 @@ import Feedback from "./pages/Feedback";
 import PoliceHome from "./pages/PoliceHome";
 import PoliceCases from "./pages/PoliceCases";
 import PoliceRob from "./pages/PoliceRob";
-
 import PoliceRobDetails from "./pages/PoliceRobDetails";
-
 import MyFir from "./pages/MyFir";
 import MyFirDetails from "./pages/MyFirDetails";
 
