@@ -43,9 +43,8 @@ export default function MyFir() {
                 <p className='fir-title'>My FIRs</p>
                 {fir.length>0 &&
                 <div className='myfir-lst'>
+                    {fir.map((f) => (
                     <div className="myfir-card">
-                        {fir.map((f) => (
-                            <>
                         <p className='myfir-type'>{f.complaint_type}</p>
                         <p className='myfir-date'>{f.date.slice(0,10)}</p>
                         {f.status==='Pending' && <p className='myfir-status'>Status: <span >{f.status}</span></p>}
@@ -53,8 +52,8 @@ export default function MyFir() {
                         {f.status==='Resolved' && <p  className='myfir-status'>Status: <span style={{color: "green"}}>{f.status}</span></p>}
                         
                         <button className='myfir-btn' onClick={()=>viewDetails(f._id)}><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
-                        </>))}
                     </div>
+                    ))}
                 </div>
 }
 {
