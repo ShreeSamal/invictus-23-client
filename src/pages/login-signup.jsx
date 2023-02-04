@@ -3,7 +3,7 @@ import './css/login_signup.css';
 import {useCookies} from 'react-cookie';
 var CryptoJS = require('crypto-js');
 
-export default function Login_Signup() {
+export default function LoginSignup() {
     const [name, setName] = useState("");
     const [contact, setContact] = useState("");
     const [email, setEmail] = useState("");
@@ -55,6 +55,12 @@ export default function Login_Signup() {
         console.log(data.message);
         if(data.message === "Login Successful"){
             handle();
+            // if(user.isPolice){
+            //     window.location.href = '/police';
+            // }
+            // else{
+            //     window.location.href = '/civlian';
+            // }
         }
         alert(data.message);
     }
