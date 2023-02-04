@@ -12,7 +12,6 @@ const Home = () => {
         <div className="content-list">
           <ul className="aside-list">
             <li className="asideItem"><Link to='/login' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-box-arrow-in-right icon"></i>Login</Link></li>
-            <li className="asideItem"><Link to='#' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-person-add icon"></i>Sign Up</Link></li>
             <li className="asideItem"><Link to='#' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-house icon"></i>Home</Link></li>
             <li className="asideItem"><Link to='#' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-journal icon"></i>File FIR</Link></li>
             <li className="asideItem"><Link to='#' style={{ textDecoration: 'none', color: '#fff', fontSize: '20px', display: 'block', width: '100%', height: '100%' }}><i class="bi bi-card-text icon"></i>Feedback</Link></li>
