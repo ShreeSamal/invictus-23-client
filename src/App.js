@@ -8,13 +8,12 @@ import Feedback from "./pages/Feedback";
 import PoliceHome from "./pages/PoliceHome";
 import PoliceCases from "./pages/PoliceCases";
 import PoliceRob from "./pages/PoliceRob";
-<<<<<<< HEAD
+
 import PoliceRobDetails from "./pages/PoliceRobDetails";
-=======
+
 import MyFir from "./pages/MyFir";
 import MyFirDetails from "./pages/MyFirDetails";
 
->>>>>>> e197a4a072212a6b597c1431d79de999d10fcf6b
 function App() {
   return (
     <BrowserRouter>
@@ -28,13 +27,13 @@ function App() {
         <Route exact path="/policeHome" element={<PoliceHome/>}/>
         <Route exact path="/police/cases" element={<PoliceCases />} />
         <Route exact path="/police/cases/rob" element={<PoliceRob />} />
-<<<<<<< HEAD
+
         <Route exact path="/police/cases/rob/detail" element={<PoliceRobDetails />}/>
-=======
+
         <Route exact path="/myFir" element={<MyFir />}/>
         <Route exact path="/myFirDetails/:id" element={<MyFirDetails />}/>
 
->>>>>>> e197a4a072212a6b597c1431d79de999d10fcf6b
+
       </Routes>
     </BrowserRouter>
   );

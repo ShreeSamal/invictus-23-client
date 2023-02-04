@@ -71,7 +71,9 @@ const PoliceRobDetails = () => {
                                     </td>
                                 </tr>
                             </table>
-
+                            <div className="rob-btnGroup">
+                        <button>Take it under our surveillance</button>
+                    </div>
                             
                         </div>
                     </div>
