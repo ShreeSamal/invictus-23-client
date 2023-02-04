@@ -20,7 +20,9 @@
     right: 0;
     font-family: 'Jost', sans-serif;
     /* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
-    background-color: #f3f3f3;
+    /* background-color: #f3f3f3; */
+    background-color: rgb(224, 224, 241);
+
 }
 
 .login-main {
