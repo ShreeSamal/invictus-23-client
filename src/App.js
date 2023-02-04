@@ -27,7 +27,6 @@ function App() {
         <Route exact path="/police/cases/rob" element={<PoliceRob />} />
 
         <Route exact path="/police/cases/rob/detail" element={<PoliceRobDetails />}/>
-
         <Route exact path="/myFir" element={<MyFir />}/>
         <Route exact path="/myFirDetails/:id" element={<MyFirDetails />}/>
 
