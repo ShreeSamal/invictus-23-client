@@ -1,0 +1,44 @@
+.myfir-lst{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.myfir-card{
+    /* 224, 224, 241 */
+    background-color: rgb(224, 224, 241);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin-bottom: 15px;
+}
+
+.myfir-type, .myfir-status{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.myfir-date{
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.myfir-status span{
+    color: var(--red);
+}
+
+.myfir-btn .icon{
+    display: inline-block;
+}
+
+.myfir-btn{
+    display: inline-block;
+    width: 100px;
+    margin: 0;
+}
