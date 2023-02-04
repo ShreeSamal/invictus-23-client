@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/anonymous" element={<Anonymous/>}/>
         <Route exact path="/feedback" element={<Feedback />}/>
         <Route exact path="/myFir" element={<MyFir />}/>
-        <Route exact path="/myFirDetails" element={<MyFirDetails />}/>
+        <Route exact path="/myFirDetails/:id" element={<MyFirDetails />}/>
       </Routes>
     </BrowserRouter>
   );

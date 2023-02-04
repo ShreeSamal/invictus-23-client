@@ -1,56 +1,79 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Profile from './Profile'
 import "./css/home.css";
 import "./css/fir.css"
 import "./css/myFirDetails.css"
+import { useParams } from 'react-router-dom';
 
 const MyFirDetails = () => {
+    let { id } = useParams();
+    const [fir, setFir] = useState({});
+    useEffect(() => {
+        getFirDetails();
+    })
+    async function getFirDetails() {
+        const res = await fetch('http://localhost:5000/fir/get', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id
+            })
+        })
+
+        const data = await res.json();
+        console.log(data);
+        setFir(data);
+    }
+
     return (
         <>
             <div className="home-container">
                 <Profile />
                 <div className="fir-wrap">
                     <p className='fir-title'>My FIR Details</p>
+                    {Object.keys(fir).length>0 &&
                     <div className="fir-details-card">
                     <div className="fir-body">
                             <table className='myFIRDetail-table'>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Name: </label></td>
-                                    <td colSpan={3}><p className='myfir-detail-value name'>Nilay Pophalkar</p></td>
+                                    <td colSpan={3}><p className='myfir-detail-value name'>{fir.fname} {fir.lname}</p></td>
                                 </tr>
                                 <tr className='myFIR-row'><td><label className='fir-topic'>Contact:</label></td>
-                                    <td><p className='myfir-detail-value contact'>9876543210</p></td>
+                                    <td><p className='myfir-detail-value contact'>{fir.contact}</p></td>
                                     <td><label className='fir-topic'>Email ID:</label></td>
-                                    <td><p className='myfir-detail-value email'>2020.shree.samal@ves.ac.in</p></td>
+                                    <td><p className='myfir-detail-value email'>{fir.email}</p></td>
                                 </tr>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Type of FIR:</label></td>
-                                    <td><p className='myfir-detail-value type'>Robbery</p></td>
+                                    <td><p className='myfir-detail-value type'>{fir.complaint_type}</p></td>
                                     <td><label className='fir-topic'>Incident Date:</label></td>
-                                    <td><p className='myfir-detail-value incident-date'>04-02-2023</p></td>
+                                    <td><p className='myfir-detail-value incident-date'>{fir.date}</p></td>
                                 </tr>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Address:</label></td>
-                                    <td colSpan={3}><p className='myfir-detail-value address'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, explicabo!</p></td>
+                                    <td colSpan={3}><p className='myfir-detail-value address'>{fir.address}</p></td>
                                 </tr>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Complaint:</label></td>
-                                    <td colSpan={3}><p className='myfir-detail-value complaint'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, explicabo!</p></td>
+                                    <td colSpan={3}><p className='myfir-detail-value complaint'>{fir.complaint}</p></td>
                                 </tr>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Police Station:</label></td>
-                                    <td><p className='myfir-detail-value police-station'>Mulund</p></td>
+                                    <td><p className='myfir-detail-value police-station'>{fir.police_station}</p></td>
                                     <td><label className='fir-topic'>Signature:</label></td>
                                     <td>
-                                        <img className='myfir-detail-value sign-img' src="" alt="" />
+                                        <img className='myfir-detail-value sign-img' style={{maxHeight:"60px",minWidth:"150px"}} src={fir.image} alt="No Image" />
                                     </td>
                                 </tr>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>FIR Date:</label></td>
-                                    <td><p className='myfir-detail-value fir-date'>04-02-2023</p></td>
+                                    <td><p className='myfir-detail-value fir-date'>{fir.createdAt}</p></td>
                                     <td><label className='fir-topic'>Status:</label></td>
                                     <td>
-                                    <p className='myfir-detail-value status'>Pending</p>
+                                    <p className='myfir-detail-value status'>{fir.status}</p>
                                     </td>
                                 </tr>
                                 <p className='officer-details'></p>
@@ -75,6 +98,9 @@ const MyFirDetails = () => {
                             
                         </div>
                     </div>
+}{
+    Object.keys(fir).length=0 && <p className='no-fir'>FIR Loading</p>
+}
                 </div>
             </div>
         </>
