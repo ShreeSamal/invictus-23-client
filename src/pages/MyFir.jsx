@@ -37,6 +37,7 @@ export default function MyFir() {
   };
   return (
     <>
+
       <div className="home-container">
         <Profile />
         <div className="fir-wrap">
@@ -85,6 +86,33 @@ export default function MyFir() {
               <h1>
                 <p className="myfir-no">No FIRs Found</p>
               </h1>
+
+        <div className="home-container">
+            <Profile />
+            <div className="fir-wrap">
+                <p className='fir-title'>My FIRs</p>
+                {fir.length>0 &&
+                <div className='myfir-lst'>
+                    {fir.map((f) => (
+                    <div className="myfir-card">
+                        <p className='myfir-type'>{f.complaint_type}</p>
+                        <p className='myfir-date'>{f.date.slice(0,10)}</p>
+                        {f.status==='Pending' && <p className='myfir-status'>Status: <span >{f.status}</span></p>}
+                        {f.status==='In Progress' && <p  className='myfir-status'>Status: <span style={{color: "yellow"}}>{f.status}</span></p>}
+                        {f.status==='Resolved' && <p  className='myfir-status'>Status: <span style={{color: "green"}}>{f.status}</span></p>}
+                        
+                        <button className='myfir-btn' onClick={()=>viewDetails(f._id)}><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+                    </div>
+                    ))}
+                </div>
+}
+{
+    fir.length===0 &&
+    <div className='myfir-lst'>
+        <h1><p className='myfir-no'>No FIRs Found</p></h1>
+    </div>
+}
+
             </div>
           )}
         </div>
