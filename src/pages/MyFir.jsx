@@ -48,7 +48,7 @@ export default function MyFir() {
                         <p className='myfir-type'>{f.complaint_type}</p>
                         <p className='myfir-date'>{f.date.slice(0,10)}</p>
                         {f.status==='Pending' && <p className='myfir-status'>Status: <span >{f.status}</span></p>}
-                        {f.status==='Ongoing' && <p  className='myfir-status'>Status: <span style={{color: "yellow"}}>{f.status}</span></p>}
+                        {f.status==='Ongoing' && <p  className='myfir-status'>Status: <span style={{color: "#ba8f00"}}>{f.status}</span></p>}
                         {f.status==='Resolved' && <p  className='myfir-status'>Status: <span style={{color: "green"}}>{f.status}</span></p>}
                         
                         <button className='myfir-btn' onClick={()=>viewDetails(f._id)}><i class="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
