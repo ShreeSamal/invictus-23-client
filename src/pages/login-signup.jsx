@@ -18,7 +18,6 @@ export default function Login_Signup() {
         var user = { email: email }
         var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(user), 'my-secret-key@123').toString();
         setCookie('user', ciphertext, { path: '/' });
-        console.log('cookie created');
      };
 
   async function signup(e) {
@@ -57,11 +56,13 @@ export default function Login_Signup() {
         if(data.message === "Login Successful"){
             handle();
         }
-        alert(data.message);
+        alert(data.message)
         if(data.user.isPolice === true){
             window.location.href = "/policeHome";
         }
+        else{
         window.location.href = "/";
+        }
     }
 
   return (
