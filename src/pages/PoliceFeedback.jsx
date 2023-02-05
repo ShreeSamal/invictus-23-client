@@ -6,7 +6,7 @@ import PoliceProfile from "./PoliceProfile";
 import { useCookies } from 'react-cookie';
 const PoliceFeedback = () => {
     const [cookies] = useCookies('user');
-    if(cookies.user){
+    if(!cookies.user){
         window.location.href = '/login';
     }
     return (

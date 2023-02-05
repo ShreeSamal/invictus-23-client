@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router';
 import { useCookies } from 'react-cookie';
 const PoliceRob = () => {
     const [cookies] = useCookies('user');
-    if(cookies.user){
+    if(!cookies.user){
         window.location.href = '/login';
     }
     let {category} = useParams();

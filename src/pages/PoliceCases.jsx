@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 const PoliceCases = () => {
     const [cookies] = useCookies('user');
-    if (cookies.user) {
+    if (!cookies.user) {
         window.location.href = '/login';
     }
     return (
