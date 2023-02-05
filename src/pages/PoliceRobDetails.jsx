@@ -10,12 +10,13 @@ var CryptoJS = require('crypto-js');
 const PoliceRobDetails = () => {
     const [cookies] = useCookies('user');
     if(!cookies.user){
-    var bytes = CryptoJS.AES.decrypt(cookies.user, 'my-secret-key@123');
-    var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-    var email = decryptedData.email;
+        window.location.href = '/login';
+    
     }
     else{
-        window.location.href = '/login';
+        var bytes = CryptoJS.AES.decrypt(cookies.user, 'my-secret-key@123');
+    var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    var email = decryptedData.email;
     }
     let { id } = useParams();
     const [fir, setFir] = useState({});
