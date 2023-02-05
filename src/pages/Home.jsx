@@ -37,15 +37,16 @@ const Home = () => {
                 <option value="nashik">Nashik</option>
               </select>
             </div>
+            <div className="home-police-number-wrap">
+              <div className="home-police-number">
+                <p className="home-police-number-title">Number of Police In the Region:</p>
+                <p className="home-police-number-value">{stats.police_count}</p>
+              </div>
 
-            <div className="home-police-number">
-              <p className="home-police-number-title">Number of Police In the Region:</p>
-              <p className="home-police-number-value">{stats.police_count}</p>
-            </div>
-
-            <div className="home-police-number">
-              <p className="home-police-number-title">Number of Police Branches:</p>
-              <p className="home-police-number-value">{stats.branches_count}</p>
+              <div className="home-police-number">
+                <p className="home-police-number-title">Number of Police Branches:</p>
+                <p className="home-police-number-value">{stats.branches_count}</p>
+              </div>
             </div>
 
             <div className="home-graph">
