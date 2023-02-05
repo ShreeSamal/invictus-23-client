@@ -8,7 +8,7 @@
 
 .myfir-card{
     /* 224, 224, 241 */
-    background-color: rgb(224, 224, 241);
+    background-color: var(--card-background);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -41,4 +41,7 @@
     display: inline-block;
     width: 100px;
     margin: 0;
+}
+.myfir-btn button{
+    background-color: var(--card-background);
 }

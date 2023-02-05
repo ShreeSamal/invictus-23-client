@@ -39,3 +39,6 @@
 .anon-btnGroup{
     width: 20%;
 }
+.anon-btnGroup button{
+    background-color: var(--primary);
+}

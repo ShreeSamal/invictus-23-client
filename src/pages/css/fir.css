@@ -51,7 +51,7 @@
     width: 84.45%;
     padding: 4px;
     margin-left: 79px;
-    background-color: #e0dede;
+    background-color: var(--card-background);
     border-radius: 5px;
     border: none;
     color: var(--black);
@@ -61,7 +61,7 @@
     width: 100%;
     font-size: 1.2em;
     padding: 7px 20px;
-    background-color: #e0dede;
+    background-color: var(--card-background);
     border: none;
     border-radius: 5px;
 }
@@ -103,9 +103,11 @@
     width: 50%;
     display: flex;   
     margin: auto;
+    
 }
 
 .fir-btnGroup button{
     width: 30%;
     font-size: 1.2em;
+    background-color: var(--primary2);
 }

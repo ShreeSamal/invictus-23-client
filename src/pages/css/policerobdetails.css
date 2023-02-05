@@ -1,3 +1,6 @@
 .rob-btnGroup{
     width: 30%;
 }
+.rob-btnGroup button{
+    background-color: var(--primary);
+}

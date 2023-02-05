@@ -1,12 +1,13 @@
 :root{
   --black: #000;
   --white: #fff;
-  --primary: #3880ff;
-  --primary2: #3848fa;
-  --highlight: #4555ff;
+  --primary: #05082b;
+  --primary2: #0a0d4b;
+  --highlight: #7b0808;
   --red: red;
   --green: green;
   --yellow: yellow;
+  --card-background: rgb(224, 224, 241);
 }
 
 .home-profile {
@@ -31,7 +32,7 @@
   border-radius: 50%;
   height: 12em;
   width: 12em;
-  border: 2px solid black;
+  border: 6px solid var(--primary);
   margin-top: 40px;
 }
 
@@ -135,6 +136,13 @@
   padding: 10px 20px;
   
 }
+.home-police-number-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
 .home-police-number{
   display: flex;
   flex-direction: column;
@@ -155,7 +163,7 @@
   color: var(--black);
   padding: 10px 20px;
   border: 1px solid var(--black);
-  width: 40%;
+  width: 50%;
 }
 
 .home-graph{

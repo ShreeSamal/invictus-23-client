@@ -4,7 +4,7 @@
     --primary: #3880ff;
     --primary2: #3848fa;
     --highlight: #4555ff;
-    --btn: #0000ff
+    --btn: #05082b;
   }
   
 .login-container {
@@ -21,7 +21,7 @@
     font-family: 'Jost', sans-serif;
     /* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
     /* background-color: #f3f3f3; */
-    background-color: rgb(224, 224, 241);
+    background-color: var(--card-background);
 
 }
 
@@ -60,7 +60,7 @@
 input {
     width: 60%;
     height: 20px;
-    background: #e0dede;
+    background: var(--card-background);
     justify-content: center;
     display: flex;
     margin: 20px auto;
@@ -96,7 +96,7 @@ button:hover {
 
 .login {
     height: 460px;
-    background: #eee;
+    background: var(--card-background);
     border-radius: 60% / 10%;
     transform: translateY(-180px);
     transition: .8s ease-in-out;
