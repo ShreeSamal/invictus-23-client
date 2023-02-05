@@ -97,13 +97,13 @@ const Fir = () => {
                                     <td><label className='fir-topic'>Type of FIR:<span>*</span></label></td>
                                     <td id='fir-type'><select name="type" className="fir-type-dropdown" onChange={(e) => { setComplaintType( e.target.value) }}>
                                         <option value="type">Select Type</option>
-                                        <option value="missing">Missing Person</option>
-                                        <option value="rob">Robbery</option>
-                                        <option value="unidentified">Unidentified Object</option>
-                                        <option value="accident">Traffic Accident</option>
-                                        <option value="murder">Murder</option>
-                                        <option value="drugs">Drugs</option>
-                                        <option value="others">Others</option>
+                                        <option value="Missing">Missing Person</option>
+                                        <option value="Robbery">Robbery</option>
+                                        <option value="Unidentified Objects">Unidentified Object</option>
+                                        <option value="Accident">Traffic Accident</option>
+                                        <option value="Murder">Murder</option>
+                                        <option value="Drugs">Drugs</option>
+                                        <option value="Others">Others</option>
                                     </select></td>
                                     <td><label className='fir-topic'>Incident Date:<span>*</span></label></td>
                                     <td><input type="date" onChange={(e) => {setDate( e.target.value )}}/></td>

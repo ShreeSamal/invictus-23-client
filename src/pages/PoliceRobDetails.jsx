@@ -125,11 +125,13 @@ const PoliceRobDetails = () => {
                                 </tr>
                             </table>
 
+
                             <div className="rob-btnGroup">
                         {fir.status === 'Ongoing' && <button onClick={makeResolved}>Take it to resolved</button>}
                         {fir.status === 'Resolved' && <button>Case Closed</button>}
                         {fir.status === 'Pending' && <button onClick={makeOngoing}>Take it under our surveillance</button>}
                     </div>
+
                         </div>
                     </div>
 }{

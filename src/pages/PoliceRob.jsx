@@ -66,6 +66,7 @@ const PoliceRob = () => {
                     <div className="big-container">
                         <div className="container robpending">
                             <h1 className='rob-pending'>Pending</h1>
+
                             {fir.length > 0 && fir.map((f) => {
                             if(f.status === 'Pending'){
                                 return(
@@ -88,6 +89,7 @@ const PoliceRob = () => {
                                 <h1 className='rob-police-loc'>{f.address}</h1>
                                 <h1 className='rob-fir-date'>{f.date.slice(0,10)}</h1>
                                 <button onClick={()=>viewDetail(f._id)} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+
                             </div>
                                 )
                             }
@@ -95,6 +97,7 @@ const PoliceRob = () => {
                         </div>
                         <div className="container robdone">
                         <h1 className='rob-completed'>Completed</h1>
+
                         {fir.length > 0 && fir.map((f) => {
                             if(f.status === 'Resolved'){
                                 return(
@@ -103,6 +106,7 @@ const PoliceRob = () => {
                                 <h1 className='rob-police-loc'>{f.address}</h1>
                                 <h1 className='rob-fir-date'>{f.date.slice(0,10)}</h1>
                                 <button onClick={()=>viewDetail(f._id)} className='myfir-btn'><i className="bi bi-box-arrow-up-right icon"></i><span>View</span></button>
+
                             </div>
                                 )
                             }
