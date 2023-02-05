@@ -3,8 +3,13 @@ import "./css/home.css";
 import PoliceProfile from "./PoliceProfile";
 import { PieChart,BarChart } from '@rsuite/charts';
 import { useEffect, useState } from "react";
+import { useCookies } from 'react-cookie';
 
 const PoliceHome = () => {
+  const [cookies] = useCookies('user');
+  if(!cookies.user){
+    window.location.href = '/login';
+  }
   const [stats, setStats] = useState("");
   useEffect(() => {
     getStats();

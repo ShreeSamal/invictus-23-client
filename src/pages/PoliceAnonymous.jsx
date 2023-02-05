@@ -3,8 +3,12 @@ import "./css/home.css";
 import "./css/fir.css";
 import "./css/policeanonymous.css";
 import PoliceProfile from "./PoliceProfile";
-
+import { useCookies } from "react-cookie";
 const PoliceAnonymous = () => {
+  const [cookies] = useCookies("user");
+  if (cookies.user) {
+    window.location.href = "/login";
+  }
   return (
     <>
     <div className="home-container">

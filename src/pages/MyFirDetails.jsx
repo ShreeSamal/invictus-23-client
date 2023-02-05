@@ -79,18 +79,18 @@ const MyFirDetails = () => {
                                 <p className='officer-details'></p>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Name:</label></td>
-                                    <td><p className='myfir-detail-value officer-name'>Mikil Lalwani</p></td>
+                                    <td><p className='myfir-detail-value officer-name'>Bajirao Singham</p></td>
                                     <td><label className='fir-topic'>Designation:</label></td>
                                     <td>
-                                    <p className='myfir-detail-value officer-designation'>IPS Officer</p>
+                                    <p className='myfir-detail-value officer-designation'>Inspector</p>
                                     </td>
                                 </tr>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Contact:</label></td>
-                                    <td><p className='myfir-detail-value officer-contact'>9638527410</p></td>
+                                    <td><p className='myfir-detail-value officer-contact'>7878787878</p></td>
                                     <td><label className='fir-topic'>Email ID:</label></td>
                                     <td>
-                                    <p className='myfir-detail-value officer-email'>2020.mikil.lalwani@ves.ac.in</p>
+                                    <p className='myfir-detail-value officer-email'>singham@gmail.com</p>
                                     </td>
                                 </tr>
                             </table>

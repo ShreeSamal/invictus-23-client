@@ -4,15 +4,26 @@ import "./css/home.css";
 import "./css/fir.css"
 import "./css/myFirDetails.css"
 import { useParams } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+var CryptoJS = require('crypto-js');
 
 const PoliceRobDetails = () => {
+    const [cookies] = useCookies('user');
+    if(cookies.user){
+    var bytes = CryptoJS.AES.decrypt(cookies.user, 'my-secret-key@123');
+    var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    var email = decryptedData.email;
+    }
+    else{
+        window.location.href = '/login';
+    }
     let { id } = useParams();
     const [fir, setFir] = useState({});
     useEffect(() => {
         getFirDetails();
     })
     async function makeOngoing() {
-        const res = await fetch('http://localhost:5000/fir/updateStatus', {
+        let res = await fetch('http://localhost:5000/fir/updateStatus', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -22,8 +33,19 @@ const PoliceRobDetails = () => {
                 status: 'Ongoing'
             })
         })
-        const data = await res.json();
+        let data = await res.json();
         alert(data.message);
+        res = await fetch('http://localhost:5000/fir/updatePoliceman', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id,
+                email
+            })
+        })
+        alert(res.status);
         window.history.back();
     }
     async function makeResolved() {
@@ -109,18 +131,18 @@ const PoliceRobDetails = () => {
                                 <p className='officer-details'></p>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Name:</label></td>
-                                    <td><p className='myfir-detail-value officer-name'>Mikil Lalwani</p></td>
+                                    <td><p className='myfir-detail-value officer-name'>Bajirao Singham</p></td>
                                     <td><label className='fir-topic'>Designation:</label></td>
                                     <td>
-                                    <p className='myfir-detail-value officer-designation'>IPS Officer</p>
+                                    <p className='myfir-detail-value officer-designation'>Inspector</p>
                                     </td>
                                 </tr>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Contact:</label></td>
-                                    <td><p className='myfir-detail-value officer-contact'>9638527410</p></td>
+                                    <td><p className='myfir-detail-value officer-contact'>7878787878</p></td>
                                     <td><label className='fir-topic'>Email ID:</label></td>
                                     <td>
-                                    <p className='myfir-detail-value officer-email'>2020.mikil.lalwani@ves.ac.in</p>
+                                    <p className='myfir-detail-value officer-email'>singham@gmail.com</p>
                                     </td>
                                 </tr>
                             </table>
