@@ -3,7 +3,12 @@ import './css/fir.css';
 import './css/policerob.css';
 import PoliceProfile from './PoliceProfile'
 import { useNavigate, useParams } from 'react-router';
+import { useCookies } from 'react-cookie';
 const PoliceRob = () => {
+    const [cookies] = useCookies('user');
+    if(cookies.user){
+        window.location.href = '/login';
+    }
     let {category} = useParams();
     const [fir,setFir] = useState([]);
     var navigate = useNavigate()
