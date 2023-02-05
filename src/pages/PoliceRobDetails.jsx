@@ -128,7 +128,11 @@ const PoliceRobDetails = () => {
                                     <p className='myfir-detail-value status'>{fir.status}</p>
                                     </td>
                                 </tr>
-                                <p className='officer-details'></p>
+                                <tr className='myFIR-row'>
+                                    <td colSpan={4}>
+                                        <p className='officer-details'>Officer's Details:</p>
+                                </td>
+                                </tr>
                                 <tr className='myFIR-row'>
                                     <td><label className='fir-topic'>Name:</label></td>
                                     <td><p className='myfir-detail-value officer-name'>Bajirao Singham</p></td>
