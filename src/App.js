@@ -16,7 +16,10 @@ import MyFir from "./pages/MyFir";
 import MyFirDetails from "./pages/MyFirDetails";
 import PoliceAnonymous from "./pages/PoliceAnonymous";
 import PoliceFeedback from "./pages/PoliceFeedback";
-
+import AdminHome from './pages/AdminHome'
+import AdminAddOfficers from "./pages/AdminAddOfficers";
+import AdminAnon from "./pages/AdminAnon";
+import AdminFeedback from "./pages/AdminFeedback";
 function App() {
   return (
     <BrowserRouter>
@@ -40,8 +43,10 @@ function App() {
         <Route exact path="/police/anonymous/information" element={<PoliceAnonymous />}/>
         <Route exact path="/police/feedback" element={<PoliceFeedback />}/>
 
-
-
+        <Route exact path="/admin/home" element={<AdminHome />}/>
+        <Route exact path="/admin/addOfficers" element={<AdminAddOfficers />}/>
+        <Route exact path="/admin/anonymous" element={<AdminAnon />}/>
+        <Route exact path="/admin/feedback" element={<AdminFeedback />}/>
       </Routes>
     </BrowserRouter>
   );
